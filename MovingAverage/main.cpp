@@ -6,17 +6,18 @@ using namespace std;
 class ArrayQueue
 {
 private:
-    int arr[N];
-    int lo;
-    int hi;
-    bool overflow;
+    int arr[N] = {0};
+    int lo = 0;
+    int hi = -1;
+    bool overflow = false;
 public:
-    ArrayQueue():
-        arr{0},
-        lo(0),
-        hi(-1)
+    ArrayQueue()
     {
 
+    }
+    void reset()
+    {
+        *this = ArrayQueue();
     }
 
     void add(int val)
@@ -31,10 +32,12 @@ public:
 
         hi = (hi + 1) % N;
     }
+
     int low() const
     {
         return lo;
     }
+
     int high() const
     {
         return hi;
@@ -50,10 +53,12 @@ public:
         else
             return (N + hi - lo);
     }
-    float avg() const
+
+    double avg() const
     {
-        return (float)sum() / count();
+        return (double)sum() / count();
     }
+
     int sum() const
     {
         int i = lo;
@@ -66,27 +71,34 @@ public:
 
         return res;
     }
+
     int diff() const
     {
         return (arr[hi == 0 ? N - 1 : hi - 1] - arr[lo]);
     }
+
     void dump()
     {
-        for (int i = 0; i < N; ++i) {
+        for (size_t i = 0; i < N; ++i) {
             cout << arr[i] << " ";
         }
         cout << endl;
     }
 };
 
-int main(int argc, char *argv[])
+void testQueue()
 {
     ArrayQueue mov;
 
-    for(int i = 1; i <= 6; i++) {
+    for(size_t i = 1; i <= 6; i++) {
         mov.add(1 << i);
         mov.dump();
         cout<< i << ": (" << mov.low() << ", " << mov.high() << "), cnt = " << mov.count() << ", sum = " << mov.sum() << ", diff = " << mov.diff() << endl;
     }
+}
+
+int main(int argc, char *argv[])
+{
+    testQueue();
     return 0;
 }
