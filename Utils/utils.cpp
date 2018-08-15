@@ -1,6 +1,8 @@
 #include <vector>
 #include <string>
 
+#include <netinet/in.h>
+
 std::vector<std::string> splitVector(const std::string &s, char delim)
 {
     std::vector<std::string> v;
@@ -26,3 +28,14 @@ std::string joinVector(const std::vector<std::string> &v, char delim)
 
     return s;
 }
+
+std::string ipAddressToString(struct in_addr addr)
+{
+    const uint32_t ipAddr = addr.s_addr;
+
+    return std::to_string(static_cast<unsigned char>((ipAddr      ) & 0xFF)) + "."
+         + std::to_string(static_cast<unsigned char>((ipAddr >>  8) & 0xFF)) + "."
+         + std::to_string(static_cast<unsigned char>((ipAddr >> 16) & 0xFF)) + "."
+         + std::to_string(static_cast<unsigned char>((ipAddr >> 24) & 0xFF));
+}
+
