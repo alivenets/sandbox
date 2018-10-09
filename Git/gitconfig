@@ -1,0 +1,11 @@
+[color]
+    ui = auto
+
+[diff]
+    tool = meld
+
+[merge]
+    tool = meld
+
+[alias]
+    lastcommit = rev-parse HEAD
