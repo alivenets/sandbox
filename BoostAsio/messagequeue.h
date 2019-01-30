@@ -1,3 +1,5 @@
+#pragma once
+
 #include <boost/asio/io_service.hpp>
 #include <boost/asio/basic_io_object.hpp>
 
