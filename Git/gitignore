@@ -1,0 +1,16 @@
+CMakeLists.txt.user
+build/
+build-*/
+.idea/
+*.sw*
+*.pyc
+*.py~
+*.config
+*.creator
+*.creator.user
+*.files
+*.includes
+.vagrant/
+.cache/
+*.autosave
+*.orig
