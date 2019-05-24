@@ -9,8 +9,13 @@ std::vector<std::string> splitVector(const std::string &s, char delim)
     size_t pos = 0, npos = 0;
 
     while (npos < s.size() && (npos = s.find(delim, pos)) != std::string::npos) {
-        v.push_back(s.substr(pos, npos - pos));
+        if (npos >= pos)
+       	    v.push_back(s.substr(pos, npos - pos));
         pos = npos + 1;
+    }
+
+    if (pos != string::npos && pos < s.size()) {
+        v.push_back(s.substr(pos));
     }
 
     return v;
