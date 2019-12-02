@@ -1,7 +1,7 @@
 
-PROG = messagequeue
+PROG = eventloop
 
-SOURCES = messagequeue.o main.o
+SOURCES = eventloop.o main.o
 
 CXXFLAGS = -std=c++14
 
