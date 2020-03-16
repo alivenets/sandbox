@@ -1,0 +1,48 @@
+8897b5ea80fdfe5acd02bf41191f65a1e38df461 347 217 2
+author Tobias Olausson
+author-mail <tobias.olausson@pelagicore.com>
+author-time 1476202398
+author-tz +0200
+filename libsoftwarecontainer/src/gateway/networkgateway.cpp
+8897b5ea80fdfe5acd02bf41191f65a1e38df461 348 218
+author Tobias Olausson
+author-mail <tobias.olausson@pelagicore.com>
+author-time 1476202398
+author-tz +0200
+filename libsoftwarecontainer/src/gateway/networkgateway.cpp
+0f9c67ec22c3ea6c15f9d92fda30447e7b8c8a6f 223 219 3
+author Therese Nordqvist
+author-mail <therese.nordqvist@pelagicore.com>
+author-time 1486572868
+author-tz +0100
+filename libsoftwarecontainer/src/gateway/network/networkgateway.cpp
+0f9c67ec22c3ea6c15f9d92fda30447e7b8c8a6f 224 220
+author Therese Nordqvist
+author-mail <therese.nordqvist@pelagicore.com>
+author-time 1486572868
+author-tz +0100
+filename libsoftwarecontainer/src/gateway/network/networkgateway.cpp
+0f9c67ec22c3ea6c15f9d92fda30447e7b8c8a6f 225 221
+author Therese Nordqvist
+author-mail <therese.nordqvist@pelagicore.com>
+author-time 1486572868
+author-tz +0100
+filename libsoftwarecontainer/src/gateway/network/networkgateway.cpp
+4e22117abf8aaba1230509e5426de7a2f106157f 176 222 1
+author Kristofer Hansson Aspman
+author-mail <kristofer.hansson-aspman@pelagicore.com>
+author-time 1394799602
+author-tz +0100
+filename pelagicontain/src/networkgateway.cpp
+645c8c7feaf5d9e421f3a29dae96411e1aa1cf47 227 223 2
+author Tobias Olausson
+author-mail <tobias.olausson@pelagicore.com>
+author-time 1483545390
+author-tz +0100
+filename libsoftwarecontainer/src/gateway/network/networkgateway.cpp
+645c8c7feaf5d9e421f3a29dae96411e1aa1cf47 228 224
+author Tobias Olausson
+author-mail <tobias.olausson@pelagicore.com>
+author-time 1483545390
+author-tz +0100
+filename libsoftwarecontainer/src/gateway/network/networkgateway.cpp
