@@ -4,74 +4,34 @@
 #
 
 BasedOnStyle: WebKit
-AccessModifierOffset: -4
-AlignAfterOpenBracket: Align
-AlignConsecutiveAssignments: false
-AlignConsecutiveDeclarations: false
-AlignEscapedNewlines: Left
-AlignOperands: true
-AlignTrailingComments: true
 AllowAllParametersOfDeclarationOnNextLine: false
-AllowShortBlocksOnASingleLine: false
-AllowShortCaseLabelsOnASingleLine: false
 AllowShortFunctionsOnASingleLine: None
-AllowShortIfStatementsOnASingleLine: false
-AllowShortLoopsOnASingleLine: false
-AlwaysBreakAfterDefinitionReturnType: None
-AlwaysBreakAfterReturnType: None
-AlwaysBreakBeforeMultilineStrings: false
 AlwaysBreakTemplateDeclarations: true
-BinPackArguments: true
-BinPackParameters: true
-BreakBeforeBinaryOperators: None
-BreakBeforeBraces: Custom
 BraceWrapping:
   AfterClass: true
-  AfterControlStatement: false
   AfterEnum: true
   AfterFunction: true
-  AfterNamespace: false
   AfterStruct: true
   AfterUnion: true
-  AfterExternBlock: false
   BeforeCatch: true
   BeforeElse: true
-  SplitEmptyFunction: true
-  SplitEmptyRecord: true
-  SplitEmptyNamespace: true
-BreakBeforeInheritanceComma: false
-BreakBeforeTernaryOperators: true
+BreakBeforeBinaryOperators: None
+BreakBeforeBraces: Custom
 BreakConstructorInitializers: AfterColon
-ForEachMacros:
-  - json_array_foreach
-  - json_object_foreach
 ColumnLimit: 120
-CompactNamespaces: false
 ConstructorInitializerAllOnOneLineOrOnePerLine: true
 ContinuationIndentWidth: 8
 Cpp11BracedListStyle: true
-DerivePointerAlignment: false
-ExperimentalAutoDetectBinPacking: false
 FixNamespaceComments: true
-IncludeBlocks: Preserve
+ForEachMacros:
+  - json_array_foreach
+  - json_object_foreach
+  - BOOST_FOREACH
+  - foreach
 IndentCaseLabels: true
-IndentWidth: 4
-IndentWrappedFunctionNames: false
-KeepEmptyLinesAtTheStartOfBlocks: true
-Language: Cpp
-MaxEmptyLinesToKeep: 1
 NamespaceIndentation: None
 PenaltyBreakAssignment: 40
 PenaltyBreakBeforeFirstCallParameter: 40
 PointerAlignment: Right
-ReflowComments: true
-SortIncludes: true
-SpaceBeforeAssignmentOperators: true
-SpaceBeforeParens: ControlStatements
-SpaceInEmptyParentheses: false
-SpacesBeforeTrailingComments: 1
-Standard: Cpp11
 TabWidth: 4
-UseTab: Never
-
 ...
