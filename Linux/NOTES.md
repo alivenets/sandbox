@@ -11,3 +11,18 @@ servers=8.8.4.4 # This should re REMOVED
 ```
 
 Link to config description: https://developer.gnome.org/NetworkManager/stable/NetworkManager.conf.html
+
+# Ignore host verification via SSH
+
+Put the following lines into `~/.ssh/config`:
+
+```
+Host 192.168.7.2
+    UserKnownHostsFile /dev/null
+    StrictHostKeyChecking no
+```
+
+# Go back to previous branch
+
+`git checkout -`
+
