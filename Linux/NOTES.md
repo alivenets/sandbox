@@ -26,3 +26,6 @@ Host 192.168.7.2
 
 `git checkout -`
 
+# `kill(-1)`
+
+Do not forget that `kill(-1)` kills ALL process which it is allowed to kill. It is written in `kill(2)` manual.
