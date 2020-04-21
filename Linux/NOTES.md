@@ -29,3 +29,11 @@ Host 192.168.7.2
 # `kill(-1)`
 
 Do not forget that `kill(-1)` kills ALL process which it is allowed to kill. It is written in `kill(2)` manual.
+
+# AppArmor: enable debug
+
+```
+# Kernel configuration: CONFIG_SECURITY_APPARMOR_DEBUG=y
+# run-time in userspace:
+$ echo Y > /sys/modules/apparmor/parameters/debug
+```
