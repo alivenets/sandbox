@@ -1,3 +1,5 @@
+from functools import wraps
+
 def test_decorator_wo_args(func):
     def wrapper():
         print("[Called decorator without args]")
