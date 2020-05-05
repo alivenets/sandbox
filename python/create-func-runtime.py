@@ -1,29 +1,38 @@
 from functools import wraps
 
-def test_decorator_wo_args(func):
+def decorator_wo_args(func):
     def wrapper():
-        print("[Called decorator without args]")
+        print("[DECO]")
         func()
     return wrapper
 
-def test_decorator_with_args(n):
+def decorator_with_args(n):
     def inner(func):    
         def wrapper():
-            print("[Called decorator with {}]".format(n))
+            print("[DECO {}]".format(n))
             func()
         return wrapper
     return inner
 
-def class_decorator_wo_args(func):
-    @wraps(func)
+def class_decorator_wo_args(func, *args, **kwargs):
     def wrapper(*args, **kwargs):
-        print("[Called CLASS decorator without args]")
+        print("[CLASS_DECO]")
         func(*args, **kwargs)
     return wrapper
 
-l = ["hello", "hello_again"]
+def class_decorator_with_args(n, *args, **kwargs):
+    def inner(cls):
+        def wrapper(func, *args, **kwargs):
+            print("[CLASS_DECO {}]".format(n))
+            func(*args, **kwargs)
+        return wrapper
+    return inner
 
+
+l = ["hello", "hello_again"]
 lcls = ["hello_from_static"]
+
+
 class TestClass(object):
     static_val = 101
 
@@ -35,17 +44,19 @@ class TestClass(object):
         return f
 
     @classmethod
-    @class_decorator_wo_args
+    @class_decorator_with_args(111)
+    # @class_decorator_wo_args
     def test_static(cls):
         print("Static method test")
 
     @classmethod
     def setup(cls):
-         for i, item in enumerate(lcls):
+        for i, item in enumerate(lcls):
             setattr(cls, item, cls.static_factory_func(item, i))
 
     def factory_func(self, string, n):
-        @test_decorator_with_args(n)
+        @decorator_with_args(n)
+        @decorator_wo_args
         def f():
             print("method: {}, {}".format(string, self.name))
         return f
@@ -56,11 +67,14 @@ class TestClass(object):
             setattr(self, item, self.factory_func(item, i*2))
         print("Class {} is created".format(self.__class__.__name__))
 
+print("### Setup")
 TestClass.setup()
 
+print("### Test static")
 TestClass.test_static()
 
-c =  TestClass()
+print("### Class instance")
+c = TestClass()
 
 print("### Call methods created from __init__")
 c.hello()
