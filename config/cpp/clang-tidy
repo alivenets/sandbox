@@ -1,0 +1,7 @@
+Checks: '*,
+        -abseil-*,
+        -android-*,
+        -google-readability-*'
+
+HeaderFilterRegex: '.
+
