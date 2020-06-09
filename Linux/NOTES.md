@@ -37,3 +37,14 @@ Do not forget that `kill(-1)` kills ALL process which it is allowed to kill. It 
 # run-time in userspace:
 $ echo Y > /sys/modules/apparmor/parameters/debug
 ```
+
+# Virtualbox and vboxsf
+
+When using VirtualBox and vboxsf filesystem driver, unexpected issues may happen. So, when debugging the code working natively or in Docker and not working in Virtualbox, try to check these things:
+
+1. SSH agent forwarding
+2. Synced directories (Volumes in docker, shared folders in VirtualBox)
+3. Environment variables
+4. Directories created in vboxsf synced directory
+
+vboxsf has some limitations. Known ones are: unsupported inotify, etc.
