@@ -48,3 +48,9 @@ When using VirtualBox and vboxsf filesystem driver, unexpected issues may happen
 4. Directories created in vboxsf synced directory
 
 vboxsf has some limitations. Known ones are: unsupported inotify, etc.
+
+# D-Bus debugging with root
+
+Sometimes, when debugging D-Bus connection with root, the message of access denied may appear, even if service is running under root user.
+That may happen if there is no policy for this bus for the root user.
+So, to fix it, place the policy file for the bus into `/etc/dbus-1/system.d` or `/etc/dbus-1/session.d` directory.
