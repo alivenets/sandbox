@@ -54,3 +54,24 @@ vboxsf has some limitations. Known ones are: unsupported inotify, etc.
 Sometimes, when debugging D-Bus connection with root, the message of access denied may appear, even if service is running under root user.
 That may happen if there is no policy for this bus for the root user.
 So, to fix it, place the policy file for the bus into `/etc/dbus-1/system.d` or `/etc/dbus-1/session.d` directory.
+
+# Import custom CA certificate
+
+```
+cp foo.crt /usr/local/share/ca-certificates/foo.crt
+sudo update-ca-certificates
+```
+
+# D-Bus and UID processing
+
+D-Bus has external authentication mechanism (AUTH EXTERNAL), which processes UID of the process sent by D-Bus client (https://dbus.freedesktop.org/doc/dbus-specification.html#auth-protocol)
+
+In D-Bus server implementation (e.g. `dbus-daemon`), there is the following process:
+
+1. Server receives AUTH request, then responds with `EXTERNAL` mechanism and asks for UID
+2. Client send its UID (which is process effective UID)
+3. Server checks in user database (which is basically the cache of `/etc/passwd` and `/etc/group`) to extract user credentials.
+4. Server checks with bus policy if this user is allowed to manipulate this bus
+
+The user configuration is static. That means, that the authentication is using only predefined configuration from `/etc`,
+hence there is no chance to use effective process GID and supplementary groups which are set in runtime. Only UID matters.
