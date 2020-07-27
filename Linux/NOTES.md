@@ -75,3 +75,9 @@ In D-Bus server implementation (e.g. `dbus-daemon`), there is the following proc
 
 The user configuration is static. That means, that the authentication is using only predefined configuration from `/etc`,
 hence there is no chance to use effective process GID and supplementary groups which are set in runtime. Only UID matters.
+
+# `LD_LIBRARY_PATH` ignored when running executable
+
+In some cases `LD_LIBRARY_PATH` may be ignored when running executable.
+One of the reasons is that the executable is running in secure mode.
+Look into https://man7.org/linux/man-pages/man3/getauxval.3.html and https://man7.org/linux/man-pages/man8/ld-linux.so.8.html for more details
