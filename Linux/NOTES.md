@@ -10,7 +10,7 @@ dns=default # should be "default". Missing line also means "default"
 servers=8.8.4.4 # This should re REMOVED
 ```
 
-Link to config description: https://developer.gnome.org/NetworkManager/stable/NetworkManager.conf.html
+Link to config description: [link](https://developer.gnome.org/NetworkManager/stable/NetworkManager.conf.html)
 
 # Ignore host verification via SSH
 
@@ -81,3 +81,16 @@ hence there is no chance to use effective process GID and supplementary groups w
 In some cases `LD_LIBRARY_PATH` may be ignored when running executable.
 One of the reasons is that the executable is running in secure mode.
 Look into https://man7.org/linux/man-pages/man3/getauxval.3.html and https://man7.org/linux/man-pages/man8/ld-linux.so.8.html for more details
+
+# `systemd` and service/unit file permissions
+
+There is no sense in restricting service file permissions not to be world-accessible. `systemd` is writing such complaint: `
+
+```
+systemd[1]: Configuration file /lib/systemd/system/some.service is marked world-inaccessible.
+This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+```
+
+This means, that the information about the service is still accessible via API, so prohibiting the file to read makes no sense.
+
+Source: [link](https://github.com/systemd/systemd/issues/770)
