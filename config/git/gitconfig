@@ -7,5 +7,21 @@
 [merge]
     tool = meld
 
+[color]
+    ui = true
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+
 [alias]
     lastcommit = rev-parse HEAD
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    lg = log -p
+    pl = pull
+    ps = push
+    cane = commit --amend --no-edit
